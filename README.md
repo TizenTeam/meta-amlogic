@@ -24,7 +24,7 @@ How to use it:
 2. Add needed layer to bblayers.conf:
     - meta-amlogic
     - (meta-openembedded)
-3  Set MACHINE to "wetekplay"/"odroidc1" in local.conf
+3. Set MACHINE to "wetekplay"/"odroidc1" in local.conf
 4. bitbake core-image-base
 5. dd to a SD card the generated sdimg file
 6. Boot your Device.
@@ -59,14 +59,14 @@ Table of Contents
 To enable the Framebuffer the layer meta-openembedded is required. This is due to the fact
 that this layer contains the framebuffer tools.
 
-1. Add fb to MACHINE_FEATURES in conf/local.conf.
+Add *fb* to MACHINE_FEATURES in ****conf/local.conf****.
 
     MACHINE_FEATURES_prepend = "fb"
 
 2. Config Tweaks
 ================
 
-It is recommended to add/change the following config options to conf/local.conf
+It is recommended to add/change the following config options to **conf/local.conf**
 
 Enable ipk/opk Pacakage Managment. This is a lightweight package Manager
 
