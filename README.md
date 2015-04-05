@@ -12,65 +12,48 @@ This layer depends on:
   layers: poky
   branch: dizzy
 
+  (Optional)
+
+  URI: git@github.com:openembedded/meta-openembedded.git
+  layers: meta-openembedded
+  branch: dizzy
+
+How to use it:
+
+1. source poky/oe-init-build-env build/wetekplay
+2. Add needed layer to bblayers.conf:
+    - meta-amlogic
+    - (meta-openembedded)
+3  Set MACHINE to "wetekplay"/"odroidc1" in local.conf
+4. bitbake core-image-base
+5. dd to a SD card the generated sdimg file
+6. Boot your Device.
+
 
 Patches
 =======
 
-Please submit any patches against this BSP to the Yocto mailing list
-(yocto@yoctoproject.org) and cc: the maintainer:
+Please submit any patches against this BSP to the Maintainer. Or create a pull request on github.
 
 Maintainer: Christian Ege <k4230r6 (at) gmail.com>
-
-Please see the meta-amlogic/MAINTAINERS file for more details.
 
 
 Table of Contents
 =================
 
-  I. Building the meta-amlogic BSP layer
+  I. Activating the Framebuffer
  II. Booting the images in /binary
 
 
-I. Building the meta-amlogic BSP layer
+I. Activating the Framebuffer
 ========================================
 
---- replace with specific instructions for your layer ---
+To enable the Framebuffer the layer meta-openembedded is required. This is due to the fact
+that this layer contains the framebuffer tools.
 
-In order to build an image with BSP support for a given release, you
-need to download the corresponding BSP tarball from the 'Board Support
-Package (BSP) Downloads' page of the Yocto Project website.
+1. Add fb to MACHINE_FEATURES in conf/local.conf. The space at the end is needed for concatenation.
 
-Having done that, and assuming you extracted the BSP tarball contents
-at the top-level of your yocto build tree, you can build a
-wetekplay image by adding the location of the meta-amlogic
-layer to bblayers.conf, along with any other layers needed (to access
-common metadata shared between BSPs) e.g.:
-
-  yocto/meta-amlogic \
-  yocto/meta-amlogic/meta-amlogic \
-
-To enable the meta-amlogic layer, add the wetekplay MACHINE to local.conf:
-
-  MACHINE ?= "wetekplay"
-
-You should then be able to build a wetekplay image as such:
-
-  $ source oe-init-build-env
-  $ bitbake core-image-sato
-
-At the end of a successful build, you should have a live image that
-you can boot from a USB flash drive (see instructions on how to do
-that below, in the section 'Booting the images from /binary').
-
-As an alternative to downloading the BSP tarball, you can also work
-directly from the meta-amlogic git repository.  For each BSP in the
-'meta-amlogic' repository, there are multiple branches, one corresponding
-to each major release starting with 'laverne' (0.90), in addition to
-the latest code which tracks the current master (note that not all
-BSPs are present in every release).  Instead of extracting a BSP
-tarball at the top level of your yocto build tree, you can
-equivalently check out the appropriate branch from the meta-amlogic
-repository at the same location.
+    MACHINE_FEATURES_prepend = "fb "
 
 
 II. Booting the images in /binary
@@ -85,7 +68,7 @@ Under Linux, insert a USB flash drive.  Assuming the USB flash drive
 takes device /dev/sdf, use dd to copy the live image to it.  For
 example:
 
-# dd if=core-image-sato-wetekplay-20101207053738.hddimg of=/dev/sdf
+# dd if=core-image-base-wetekplay-20101207053738.hddimg of=/dev/sdf
 # sync
 # eject /dev/sdf
 
@@ -101,11 +84,3 @@ If you want to ssh into the system, you can use the root terminal to
 ifconfig the IP address and use that to ssh in.  The root password is
 empty, so to log in type 'root' for the user name and hit 'Enter' at
 the Password prompt: and you should be in.
-
-----
-
-If you find you're getting corrupt images on the USB (it doesn't show
-the syslinux boot: prompt, or the boot: prompt contains strange
-characters), try doing this first:
-
-# dd if=/dev/zero of=/dev/sdf bs=1M count=512
