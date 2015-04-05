@@ -8,15 +8,15 @@ Dependencies
 
 This layer depends on:
 
-  URI: git://git.yoctoproject.org/poky
-  layers: poky
-  branch: dizzy
+    URI: git://git.yoctoproject.org/poky
+    layers: poky
+    branch: dizzy
 
-  (Optional)
+Optional:
 
-  URI: git@github.com:openembedded/meta-openembedded.git
-  layers: meta-openembedded
-  branch: dizzy
+    URI: git@github.com:openembedded/meta-openembedded.git
+    layers: meta-openembedded
+    branch: dizzy
 
 How to use it:
 
@@ -79,20 +79,18 @@ Enable SSH Server and add Package Managment to the image
 3. Booting the images in /binary
 =================================
 
---- replace with specific instructions for your platform ---
-
 This BSP contains bootable live images, which can be used to directly
-boot Yocto off of a USB flash drive.
+boot Yocto off of a SD-Card drive.
 
-Under Linux, insert a USB flash drive.  Assuming the USB flash drive
+Under Linux, insert a SD-Card drive.  Assuming the SD-Card drive
 takes device /dev/sdf, use dd to copy the live image to it.  For
 example:
 
-# dd if=core-image-base-wetekplay-20101207053738.hddimg of=/dev/sdf
-# sync
-# eject /dev/sdf
+    # dd if=core-image-base-wetekplay-20101207053738.hddimg of=/dev/sdf
+    # sync
+    # eject /dev/sdf
 
-This should give you a bootable USB flash device.  Insert the device
+This should give you a bootable SD-Card device.  Insert the device
 into a bootable USB socket on the target, and power on.  This should
 result in a system booted to the Sato graphical desktop.
 
