@@ -35,7 +35,7 @@ Patches
 
 Please submit any patches against this BSP to the Maintainer. Or create a pull request on github.
 
-Maintainer: Christian Ege <k4230r6 (at) gmail.com>
+Maintainer: Christian Ege [<k4230r6@gmail.com>](mailto:k4230r6@gmail.com)
 
 
 Issues
@@ -59,7 +59,7 @@ Table of Contents
 To enable the Framebuffer the layer meta-openembedded is required. This is due to the fact
 that this layer contains the framebuffer tools.
 
-Add *fb* to MACHINE_FEATURES in ****conf/local.conf****.
+Add *fb* to MACHINE_FEATURES in **conf/local.conf**.
 
     MACHINE_FEATURES_prepend = "fb"
 
