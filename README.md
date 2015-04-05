@@ -38,25 +38,45 @@ Please submit any patches against this BSP to the Maintainer. Or create a pull r
 Maintainer: Christian Ege <k4230r6 (at) gmail.com>
 
 
+Issues
+======
+
+If you find an issue or have the feeling this needs some improvement feel free to file an issue on github
+
+
+
 Table of Contents
 =================
 
-  I. Activating the Framebuffer
- II. Booting the images in /binary
+1. Activating the Framebuffer
+2. Config tweaks
+3. Booting the images in /binary
 
 
-I. Activating the Framebuffer
+1. Activating the Framebuffer
 ========================================
 
 To enable the Framebuffer the layer meta-openembedded is required. This is due to the fact
 that this layer contains the framebuffer tools.
 
-1. Add fb to MACHINE_FEATURES in conf/local.conf. The space at the end is needed for concatenation.
+1. Add fb to MACHINE_FEATURES in conf/local.conf.
 
-    MACHINE_FEATURES_prepend = "fb "
+    MACHINE_FEATURES_prepend = "fb"
 
+2. Config Tweaks
+================
 
-II. Booting the images in /binary
+It is recommended to add/change the following config options to conf/local.conf
+
+Enable ipk/opk Pacakage Managment. This is a lightweight package Manager
+
+    PACKAGE_CLASSES ?= "package_ipk"
+
+Enable SSH Server and add Package Managment to the image
+
+    EXTRA_IMAGE_FEATURES = "debug-tweaks package-management ssh-server-dropbear"
+
+3. Booting the images in /binary
 =================================
 
 --- replace with specific instructions for your platform ---
