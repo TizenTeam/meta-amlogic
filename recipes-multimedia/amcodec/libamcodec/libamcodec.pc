@@ -6,5 +6,5 @@ Name: LibAmCodec
 Description: Amlogic Audio/Video Codec Engine
 Version: 0.1
 Requires:
-Libs: -L${libdir} -lamcodec
+Libs: -L${libdir} -lamcodec -lamadec -lamavutils
 Cflags: -I${includedir}/amlogic
