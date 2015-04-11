@@ -10,13 +10,13 @@ This layer depends on:
 
     URI: git://git.yoctoproject.org/poky
     layers: poky
-    branch: dizzy
+    branch: master
 
 Optional:
 
     URI: git@github.com:openembedded/meta-openembedded.git
     layers: meta-openembedded
-    branch: dizzy
+    branch: master
 
 How to use it:
 
@@ -35,7 +35,7 @@ Patches
 
 Please submit any patches against this BSP to the Maintainer. Or create a pull request on github.
 
-Maintainer: Christian Ege [<k4230r6@gmail.com>](mailto:k4230r6@gmail.com)
+Maintainer: Christian Ege [k4230r6@gmail.com](mailto:k4230r6@gmail.com)
 
 
 Issues
