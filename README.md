@@ -39,7 +39,7 @@ Please use github for pull requests: [https://github.com/linux-meson/meta-amlogi
 Reporting bugs
 ==============
 
-The github issue tracker ([https://github.com/linux-meson/meta-amlogic/issues](https://github.com/linux-meson/meta-amlogic/issues)) is being used to keep track of bugs, but it recommended ask on the mailinglist (linux-meson@googlegroups.com) first.
+The github issue tracker ([https://github.com/linux-meson/meta-amlogic/issues]https://github.com/linux-meson/meta-amlogic/issues) is being used to keep track of bugs, but it recommended ask on the mailinglist (linux-meson@googlegroups.com) first.
 
 Maintainer: Christian Ege [k4230r6@gmail.com](mailto:k4230r6@gmail.com)
 
