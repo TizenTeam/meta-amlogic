@@ -29,21 +29,19 @@ How to use it:
 5. dd to a SD card the generated sdimg file
 6. Boot your Device.
 
+Contributing
+============
 
-Patches
-=======
+The linux-meson mailinglist (linux-meson@googlegroups.com) is used for questions, comments and patch review. It is subscriber only, so please register before posting.
 
-Please submit any patches against this BSP to the Maintainer. Or create a pull request on github.
+Please use github for pull requests: [https://github.com/linux-meson/meta-amlogic/pulls](https://github.com/linux-meson/meta-amlogic/pulls)
+
+Reporting bugs
+==============
+
+The github issue tracker ([https://github.com/linux-meson/meta-amlogic/issues]https://github.com/linux-meson/meta-amlogic/issues) is being used to keep track of bugs, but it recommended ask on the mailinglist (linux-meson@googlegroups.com) first.
 
 Maintainer: Christian Ege [k4230r6@gmail.com](mailto:k4230r6@gmail.com)
-
-
-Issues
-======
-
-If you find an issue or have the feeling this needs some improvement feel free to file an issue on github
-
-
 
 Table of Contents
 =================
