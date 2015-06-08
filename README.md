@@ -10,13 +10,13 @@ This layer depends on:
 
     URI: git://git.yoctoproject.org/poky
     layers: poky
-    branch: master
+    branch: fido
 
 Optional:
 
     URI: git@github.com:openembedded/meta-openembedded.git
     layers: meta-openembedded
-    branch: master
+    branch: fido
 
 How to use it:
 
