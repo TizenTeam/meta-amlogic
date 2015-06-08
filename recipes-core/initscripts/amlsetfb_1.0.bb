@@ -22,6 +22,7 @@ RDEPENDS_${PN}_append = " ${@bb.utils.contains('MACHINE_FEATURES', 'fb', 'fbset 
 
 do_install() {
    if ${@bb.utils.contains('MACHINE_FEATURES','fb','true','false',d)}; then
+       install -d ${D}${sysconfdir}/init.d
        install -m 0755 ${WORKDIR}/amlsetfb.sh  ${D}${sysconfdir}/init.d/amlsetfb.sh
        install -m 0755 ${WORKDIR}/aaa.sh  ${D}${sysconfdir}/init.d/aaa.sh
 	   update-rc.d -r ${D} amlsetfb.sh start 03 S .
