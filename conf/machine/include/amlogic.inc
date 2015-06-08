@@ -1,5 +1,4 @@
-IMAGE_CLASSES += "sdcard_image-wetek"
-MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS_prepend = "${@bb.utils.contains('MACHINE_FEATURES', 'fb', 'amlsetfb', '', d)} "
+MACHINE_ESSENTIAL_EXTRA_RDEPENDS += " ${@bb.utils.contains('MACHINE_FEATURES', 'fb', 'amlsetfb', '', d)}"
 
 PREFERRED_PROVIDER_virtual/libgles1 = "opengl-amlogic"
 PREFERRED_PROVIDER_virtual/libgles2 = "opengl-amlogic"
