@@ -21,6 +21,9 @@ PV = "${LINUX_VERSION}"
 
 COMPATIBLE_MACHINE = "wetekplay|alien3|odroidc1|mk808bplus"
 
+S = "${WORKDIR}/linux-amlogic-3.10-84deff2"
+B = "${S}"
+
 # for kernel
 SRC_URI[md5sum] = "0a48fc9262c64b6fd229d26a2caca8b1"
 SRC_URI[sha256sum] = "08fe2eb62ff14a02e93d85125d2b6adcf4cb1645eb18d67a717d2dcb2bf8ac6f"
@@ -65,11 +68,6 @@ do_compile_prepend () {
 }
 
 do_install_append () {
-        # removed binary stuff from Amlogic
-        rm ${D}/usr/src/kernel/mkbootimg
-        # This is x86 elf code...
-        rm ${D}/usr/src/kernel/arch/arm/boot/mkimage
-
         # remove *.z from installation path those are object files from amlogic for binary modules
         find ${D}/usr/src/kernel -type f -name "*.z" | xargs rm -f
 }
