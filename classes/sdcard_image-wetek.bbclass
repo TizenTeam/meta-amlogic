@@ -45,6 +45,7 @@ IMAGE_DEPENDS_wetek-sdimg = " \
 			parted-native \
 			mtools-native \
 			dosfstools-native \
+			e2fsprogs-native \
 			virtual/kernel \
 			${@base_contains("KERNEL_IMAGETYPE", "uImage", "u-boot", "",d)} \
 			"
