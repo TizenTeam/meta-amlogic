@@ -48,6 +48,7 @@ do_install_append () {
 }
 
 do_deploy_append () {
+    install ${WORKDIR}/boot.ini ${DEPLOYDIR}
     install ${S}/sd_fuse/${BL1_BINARY} ${DEPLOYDIR}/${BL1_IMAGE}
     cd ${DEPLOYDIR}
     rm -f ${BL1_BINARY} ${BL1_SYMLINK}
