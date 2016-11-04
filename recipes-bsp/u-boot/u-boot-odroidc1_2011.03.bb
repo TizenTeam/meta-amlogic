@@ -10,9 +10,9 @@ COMPATIBLE_MACHINE = "(odroidc1)"
 SRCREV = "f631c80969b33b796d2d4c077428b4765393ed2b"
 
 PV = "v2011.03+git${SRCPV}"
-PR = "r4"
+PR = "r5"
 
-PROVIDES = "u-boot"
+PROVIDES =+ "u-boot"
 PACKAGES =+ "u-boot-ini"
 
 SRC_URI = " \
@@ -45,7 +45,7 @@ do_install_append () {
 }
 
 do_deploy_append () {
-
+    install ${WORKDIR}/boot.ini ${DEPLOYDIR}
     install ${S}/sd_fuse/${BL1_BINARY} ${DEPLOYDIR}/${BL1_IMAGE}
     cd ${DEPLOYDIR}
     rm -f ${BL1_BINARY} ${BL1_SYMLINK}
